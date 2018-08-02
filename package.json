@@ -1,6 +1,7 @@
 {
   "name": "cv-materializer",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "description": "An Angular 6 Template for Material Design CV",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,6 +11,16 @@
     "e2e": "ng e2e"
   },
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lure-of-Lysergide/cv-materializer.git"
+  },
+  "author": "Nita Radu <radu.nita@mail.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Lure-of-Lysergide/cv-materializer/issues"
+  },
+  "homepage": "https://github.com/Lure-of-Lysergide/cv-materializer#readme",
   "dependencies": {
     "@angular/animations": "^6.1.0",
     "@angular/cdk": "^6.2.0",
