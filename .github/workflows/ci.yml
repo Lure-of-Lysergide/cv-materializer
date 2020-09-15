@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: 'node:12.18.3-alpine3.11'
+    steps:
+      - uses: actions/checkout@v2
+      - name: Installing dependencies
+        run: npm install
+      - name: Building static webpage
+        run: npm run build
+      - name: Pushing to GitHub Pages repository
+        uses: '${{ github.repository }}@master'
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: 'build'
+          destination-github-username: ${{ github.repository_owner }}
+          destination-repository-name: '${{ github.repository_owner }}.github.io'
+          user-email: radu.nita@scifier.dev
