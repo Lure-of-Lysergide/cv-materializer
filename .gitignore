@@ -4,8 +4,10 @@
 /node_modules
 package-lock.json
 
-# Production builds
+# Artifacts
 /build
+/public/manifest.json
+*.pdf
 
 # Environment variables
 .env.local
