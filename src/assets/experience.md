@@ -11,7 +11,7 @@ Chișinău, R.M.
 - Improved and developed new features for a **cross-client chat bot** (**Whatsapp**, **Telegram**) using **Node.js** and **Python 3**
 - Developed, deployed and tested **smart contracts** with **solidity** and **truffle**
 - Performed **smart contract audit**
-- Developed **multi-blockchain wallet** solutions (Ethereum, **Bitcoin**)
+- Developed **multi-blockchain wallet** solutions (**Ethereum**, **Bitcoin**)
 - Developed **cross-chain assets exchange** (**Binance**-chain, public and private Ethereum networks)
 - Leaded small development teams, trained blockchain interns and consulted the client on infrastructure and blockchain technology
 - Optimized the delivery process with **Gitlab CI**, **docker** and **terraform**
@@ -20,9 +20,6 @@ Chișinău, R.M.
 
 Moldova State University  
 Chișinău, R.M.
-
-- Performed experimental design and conducted various experiments
-- Improved the methodology, wrote scientific reports and articles based on experimental results
 
 ### **11/2014 - 09/2015: Scientific Research Intern**
 
