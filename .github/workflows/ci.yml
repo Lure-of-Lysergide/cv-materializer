@@ -9,26 +9,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: node:12-slim
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
       - name: Install dependencies
         run: |
-          apt-get update
-          apt-get install -y wget gnupg
-          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
-          sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-          apt-get update
-          apt-get install -y google-chrome-stable fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf libxss1 --no-install-recommends
-          rm -rf /var/lib/apt/lists/*
           npm install
           npm config set script-shell bash --global
       - name: Building static webpage
-        run: |
-          groupadd -r pptruser
-          useradd -r -g pptruser -G audio,video pptruser
-          sudo -u pptruser npm run build
+        run: npm run build
       - name: Load environment variables
         run: source .env
         shell: bash
