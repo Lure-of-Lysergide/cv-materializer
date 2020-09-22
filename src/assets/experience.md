@@ -21,6 +21,9 @@ Chișinău, R.M.
 Moldova State University  
 Chișinău, R.M.
 
+- Performed experimental design and conducted various experiments
+- Improved the methodology, wrote scientific reports and articles based on experimental results
+
 ### **11/2014 - 09/2015: Scientific Research Intern**
 
 Institute of Genetics, Physiology and Plant Protection of the A.S.M.  

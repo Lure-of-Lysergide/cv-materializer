@@ -26,7 +26,7 @@ The standard GitHub Pages deployment is pretty easy. Follow these steps to get a
 5. Edit the markdown files in `src/assets`.
 6. Change (or just remove) the `public/logo.png` image.
 7. Push your changes to the `master` branch if you have worked with a local copy of your `cv-materializer` repository.
-8. Profit! (In a few minutes you can access your online portfolio on `https://<YOUR_GITHUB_USERNAME>.github.io`).
+8. Profit! (In a few minutes you can access your online portfolio on `https://<YOUR_GITHUB_USERNAME>.github.io` or your custom domain).
 
 ### Development and Manual Deployment
 
