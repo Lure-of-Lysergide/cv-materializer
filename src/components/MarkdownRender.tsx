@@ -56,7 +56,7 @@ const options = {
         ) {
           return (
             <Link display="block" variant="body1" href={props.href} key={props.title}>
-              <Grid container spacing={1} alignItems="stretch" xs="auto">
+              <Grid container spacing={1} alignItems="stretch">
                 <Grid item>
                   <decorableLink.icon />
                 </Grid>
