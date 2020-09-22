@@ -10,12 +10,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: node:12.18.4-alpine3.12
+      image: node:12-slim
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
         run: |
-          apk add --no-cache chromium nss freetype freetype-dev harfbuzz ca-certificates ttf-freefont
+          apt-get update
+          apt-get install -y wget gnupg
+          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+          sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+          apt-get update
+          apt-get install -y google-chrome-stable fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf libxss1 --no-install-recommends
+          rm -rf /var/lib/apt/lists/*
           npm install
       - name: Building static webpage
         run: npm run build
