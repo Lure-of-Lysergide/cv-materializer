@@ -1,0 +1,19 @@
+{
+  "files.associations": {
+    "*.jsx": "javascriptreact"
+  },
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.markdownlint": true
+  },
+  "prettier.configPath": ".prettierrc",
+  "eslint.format.enable": true,
+  "markdownlint.config": {
+    "default": true,
+    "MD033": false,
+    "MD041": false
+  }
+}

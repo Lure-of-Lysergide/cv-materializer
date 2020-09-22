@@ -1,86 +1,67 @@
 # cv-materializer
 
-An Angular 6 Template for Material Design CV
-![Logo](logo.png "Screenshot")
+![GitHub Actions](https://github.com/scifier/cv-materializer/workflows/CI/badge.svg)
 
-  - [Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Installing](#installing)
-    - [Using](#using)
-  - [TODO](#todo)
-  - [Built With](#built-with)
-  - [Versioning](#versioning)
-  - [Authors](#authors)
-  - [License](#license)
+A React.js/typescript resume builder that is using markdown files for generating pages and concatenates them into a downloadable PDF.
 
-## Getting Started
+- [Usage](#getting-started)
+  - [GitHub Pages Deployment](#github-pages-deployment)
+  - [Development and Manual Deployment](#development-manual-deployment)
+- [Versioning](#versioning)
+- [Authors](#authors)
+- [License](#license)
+
+## Usage
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### Prerequisites
+### GitHub Pages Deployment
 
-- [Node.js 8.0+](https://nodejs.org/en/download)
-- [NPM 6.0+](https://www.npmjs.com/get-npm)
-- [Angular-CLI 6.0+](https://cli.angular.io)
+The standard GitHub Pages deployment is pretty easy. Follow these steps to get a configured auto-updatable online portfolio:
 
-### Installing
+1. Generate your [personal token](https://github.com/settings/tokens) with repo access if you haven't already.
+2. Fork this project and create a new repository secret with name `API_TOKEN_GITHUB`. Copy here your personal token.
+3. Create a repository named `<YOUR_GITHUB_USERNAME>.github.io` if you haven't already (the repository should be empty).
+4. Edit the .env file.
+5. Edit the markdown files in `src/assets`.
+6. Change (or just remove) the `public/logo.png` image.
+7. Push your changes to the `master` branch if you have worked with a local copy of your `cv-materializer` repository.
+8. Profit! (In a few minutes you can access your online portfolio on `https://<YOUR_GITHUB_USERNAME>.github.io`).
 
-If you have [git](https://git-scm.com), you can install `cv-materializer` via [git clone](https://git-scm.com/docs/git-clone):
+### Development and Manual Deployment
+
+If you have [git](https://git-scm.com) and [Node.js 8.0+](https://nodejs.org/en/download) already installed, you can follow these steps to get a local copy for development, testing or manual deployment:
 
 ```bash
-# Get the latest snapshot
-git clone -b master https://github.com/Lure-of-Lysergide/cv-materializer
-
-# Change directory
+# Get the latest snapshot and install dependencies
+git clone https://github.com/scifier/cv-materializer
 cd cv-materializer
-
-# Install NPM dependencies
 npm install
-
-# Then start the Angular server
-ng serve
 ```
 
-### Notes about CSP
+Before starting/building the project follow these steps:
 
-Currently, this project use `html2canvas` without proxying, so, if you want to create new PDFs you will need to disable [CSP](https://en.wikipedia.org/wiki/Content_Security_Policy) in your browser.
+1. Edit the .env file.
+2. Edit the markdown files in `src/assets`.
+3. Change (or just remove) the `public/logo.png` image.
 
-If you use Chrome, you can do it with [this](https://chrome.google.com/webstore/detail/disable-content-security/ieelmcmcagommplceebfedjlakkhpden/related) addon.
-
-For this purposes, the [header](./src/app/header/header.component.html) was modified, so the download button doesn't trigger the `captureScreen()` function from [app.component.ts](./src/app/app.component.ts).
-
-### Deploying
-
-Build tha application by running:
 ```bash
-ng build --prod
+# Start the development server
+npm run start
+
+# Build the application by running
+npm run build
 ```
 
-Then, copy all the files from `./dist/cv-materializer` to the root directory of your server
-
-## TODO
-
-- [ ] Redesign the application
-- [ ] Add posibility to modify content in running app
-- [ ] Add posibility to use Github account info for automatic CV generation 
-- [ ] Think about how to bypass content security policy restrictions (for example add [this proxy](https://github.com/niklasvh/html2canvas-proxy-nodejs) for `html2canvas`)
-- [ ] Replace the `html2canvas` and `jsPDF` libraries with `dom2pdf` or something like that
-- [ ] Add `CHANGELOG`
-- [ ] Add tests
-
-## Built With
-
-* [Angular 6](https://angular.io) - TypeScript-based open-source front-end framework
-* [html2canvas](https://html2canvas.hertzen.com) - library for rendering the viewport
-* [jsPDF](https://parall.ax/products/jspdf) - library for generating PDFs
+After building the application just copy all the files from `build` to the root directory of your server.
 
 ## Versioning
 
-This project use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/Lure-of-Lysergide/cv-materializer/tags). 
+This project use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/scifier/cv-materializer/tags).
 
 ## Authors
 
-* **Niţa Radu** - *Initial work* - [Lysergide](https://github.com/Lure-of-Lysergide)
+- **Niţa Radu** - *Initial work* - [scifier](https://github.com/scifier)
 
 ## License
 
