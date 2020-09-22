@@ -1,0 +1,11 @@
+{
+  "src/**/*.{js,jsx,ts,tsx}": [
+    "npm run --silent format",
+    "npm run --silent lint -- --fix",
+    "git add"
+  ],
+  "src/**/*.{scss,css,json,md}": [
+    "npm run --silent format",
+    "git add"
+  ]
+}
