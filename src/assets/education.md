@@ -1,3 +1,5 @@
+<div style="page-break-after: always;"></div>
+
 ## Education
 
 ### **2016 - 2018: PhD Student (Nanobiotechnology)**
