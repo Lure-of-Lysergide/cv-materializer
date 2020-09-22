@@ -52,7 +52,7 @@ const App: React.FC = () => {
                     component={(): JSX.Element => <Section contents={s.contents} />}
                   />
                 ))}
-                <Redirect from="/" to={sections[0].url} />
+                <Redirect from="/" to={sections[1].url} />
               </Switch>
             </Grid>
           </main>
