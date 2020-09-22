@@ -26,9 +26,10 @@ jobs:
           npm config set script-shell bash --global
       - name: Building static webpage
         run: npm run build
-      - name: Push to GitHub Pages repository
+      - name: Load environment variables
         run: source .env
         shell: bash
+      - name: Push to GitHub Pages repository
         uses: cpina/github-action-push-to-another-repository@v1.1
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
