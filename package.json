@@ -1,66 +1,95 @@
 {
   "name": "cv-materializer",
-  "version": "0.0.2",
-  "description": "An Angular 6 Template for Material Design CV",
+  "version": "0.1.0",
+  "description": "React.js/typescript resume builder that is using markdown files for generating pages and concatenates them into a downloadable PDF",
+  "keywords": [
+    "cv",
+    "resume",
+    "material",
+    "markdown",
+    "md",
+    "react",
+    "typescript",
+    "pdf"
+  ],
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "build-manifest": "source .env && export REACT_APP_NAME=$REACT_APP_NAME && chmod +x bin/generate-manifest && bin/generate-manifest",
+    "build-pdf": "source .env && (echo '# '\"$REACT_APP_NAME\"'\n\n### '\"$REACT_APP_DESCRIPTION\"'\n\n'; cat src/assets/contacts.md src/assets/experience.md src/assets/education.md src/assets/projects.md) | npx md-to-pdf > 'public/'\"$REACT_APP_NAME\"' CV.pdf'",
+    "start": "npm run build-manifest && npm run build-pdf && npx react-scripts start",
+    "build": "npm run build-manifest && npm run build-pdf && npx react-scripts build && cp LICENSE build",
+    "test": "npm run build-manifest && npm run build-pdf && npx react-scripts test",
+    "eject": "npx react-scripts eject",
+    "lint": "npx eslint --ext .js,.jsx,.ts,.tsx src --color",
+    "format": "npx prettier --write \"src/**/*.{js,jsx,ts,tsx,scss,css,json,md}\""
   },
-  "private": true,
+  "author": "scifier <radu.nita@scifier.dev> (https://scifier.dev)",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Lure-of-Lysergide/cv-materializer.git"
+    "url": "git+https://github.com/scifier/cv-materializer.git"
   },
-  "author": "Nita Radu <radu.nita@mail.ru>",
-  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Lure-of-Lysergide/cv-materializer/issues"
+    "url": "https://github.com/scifier/cv-materializer/issues"
   },
-  "homepage": "https://github.com/Lure-of-Lysergide/cv-materializer#readme",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "commitMsg": {
+    "noClientHook": true,
+    "noServerHook": true
+  },
   "dependencies": {
-    "@angular/animations": "^6.1.0",
-    "@angular/cdk": "^6.2.0",
-    "@angular/common": "^6.1.0",
-    "@angular/compiler": "^6.1.0",
-    "@angular/core": "^6.1.0",
-    "@angular/flex-layout": "^6.0.0-beta.16",
-    "@angular/forms": "^6.1.0",
-    "@angular/http": "^6.1.0",
-    "@angular/material": "^6.4.1",
-    "@angular/platform-browser": "^6.1.0",
-    "@angular/platform-browser-dynamic": "^6.1.0",
-    "@angular/router": "^6.1.0",
-    "core-js": "^2.5.4",
-    "html2canvas": "^1.0.0-alpha.12",
-    "jspdf": "^1.4.1",
-    "rxjs": "^6.0.0",
-    "zone.js": "~0.8.26"
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^24.0.0",
+    "@types/markdown-to-jsx": "^6.11.2",
+    "@types/material-ui": "^0.21.7",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-router-dom": "^5.1.5",
+    "markdown-to-jsx": "^6.11.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1",
+    "typescript": "~3.7.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.7.0",
-    "@angular/cli": "~6.1.1",
-    "@angular/compiler-cli": "^6.1.0",
-    "@angular/language-service": "^6.1.0",
-    "@types/jasmine": "~2.8.6",
-    "@types/jasminewd2": "~2.0.3",
-    "@types/node": "~8.9.4",
-    "@types/html2canvas": "0.0.33",
-    "@types/jspdf": "^1.1.31",
-    "codelyzer": "~4.2.1",
-    "jasmine-core": "~2.99.1",
-    "jasmine-spec-reporter": "~4.2.1",
-    "karma": "~1.7.1",
-    "karma-chrome-launcher": "~2.2.0",
-    "karma-coverage-istanbul-reporter": "~2.0.0",
-    "karma-jasmine": "~1.1.1",
-    "karma-jasmine-html-reporter": "^0.2.2",
-    "protractor": "~5.3.0",
-    "ts-node": "~5.0.1",
-    "tslint": "~5.9.1",
-    "typescript": "~2.7.2"
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/parser": "^2.34.0",
+    "babel-eslint": "10.1.0",
+    "commit-msg": "^0.2.3",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "18.2.0",
+    "eslint-config-airbnb-typescript": "^7.2.1",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-config-react-app": "5.2.1",
+    "eslint-import-resolver-typescript": "2.0.0",
+    "eslint-loader": "4.0.2",
+    "eslint-plugin-flowtype": "^4.6.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "6.3.1",
+    "eslint-plugin-prettier": "3.1.4",
+    "eslint-plugin-react": "7.20.3",
+    "eslint-plugin-react-hooks": "^2.5.1",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.3.0",
+    "md-to-pdf": "^3.1.1",
+    "prettier": "2.0.5",
+    "prettier-eslint": "11.0.0",
+    "prettier-eslint-cli": "5.0.0"
   }
 }
