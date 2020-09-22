@@ -38,7 +38,7 @@ const App: React.FC = () => {
     <>
       <CssBaseline />
       <Container maxWidth="lg">
-        <Header title={process.env.REACT_APP_TITLE} sections={sections} />
+        <Header title={process.env.REACT_APP_DOMAIN} sections={sections} />
         <Router>
           <main>
             <Banner contents={bannerContents} />
