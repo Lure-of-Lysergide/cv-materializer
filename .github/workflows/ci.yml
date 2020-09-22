@@ -23,13 +23,12 @@ jobs:
           apt-get install -y google-chrome-stable fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf libxss1 --no-install-recommends
           rm -rf /var/lib/apt/lists/*
           npm install
+          npm config set script-shell bash --global
       - name: Building static webpage
         run: npm run build
-        shell: bash
-      - name: Load environment variables
+      - name: Push to GitHub Pages repository
         run: source .env
         shell: bash
-      - name: Push to GitHub Pages repository
         uses: cpina/github-action-push-to-another-repository@v1.1
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
