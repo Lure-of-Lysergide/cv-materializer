@@ -55,7 +55,7 @@ const options = {
           new RegExp(`${props.children[0]}$`, 'i').test(props.href)
         ) {
           return (
-            <Link display="block" variant="body1" href={props.href} key={props.title}>
+            <Link display="block" variant="body1" href={props.href} key={props.title} target="_blank" rel="noopener noreferrer">
               <Grid container spacing={1} alignItems="stretch">
                 <Grid item>
                   <decorableLink.icon />
@@ -65,7 +65,7 @@ const options = {
             </Link>
           );
         }
-        return <Link {...props} />;
+        return <Link target="_blank" rel="noopener noreferrer" {...props} />;
       },
     },
     li: {
