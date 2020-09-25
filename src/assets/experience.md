@@ -5,16 +5,16 @@
 Titanium Software  
 Chișinău, R.M.
 
-- Developed a **Node.js** tool for deployment **private Ethereum blockchain** networks on **AWS** using **terraform** and **docker**
+- Developed a **Node.js** tool for deployment **private Ethereum blockchain** networks on **AWS** using **Terraform** and **Docker**
 - Performed **load testing** of a private blockchain infrastructure with instant transactions using **K6**
-- Developed a **custom Ethereum protocol** in **golang** by disabling the possibility to deploy contracts for regular users
+- Developed a **custom Ethereum consensus protocol** in **Golang**
 - Improved and developed new features for a **cross-client chat bot** (**Whatsapp**, **Telegram**) using **Node.js** and **Python 3**
-- Developed, deployed and tested **smart contracts** with **solidity** and **truffle**
+- Developed, tested, deployed and integrated **smart contracts** with **Solidity**, **Truffle** and **Web3**
 - Performed **smart contract audit**
 - Developed **multi-blockchain wallet** solutions (**Ethereum**, **Bitcoin**)
 - Developed **cross-chain assets exchange** (**Binance**-chain, public and private Ethereum networks)
 - Leaded small development teams, trained blockchain interns and consulted the client on infrastructure and blockchain technology
-- Optimized the delivery process with **Gitlab CI**, **docker** and **terraform**
+- Optimized the delivery process with **Gitlab CI**, **Docker** and **Terraform**
 
 ### **01/2016 - 12/2017: Scientific Researcher**
 

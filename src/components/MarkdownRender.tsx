@@ -55,14 +55,16 @@ const options = {
           new RegExp(`${props.children[0]}$`, 'i').test(props.href)
         ) {
           return (
-            <Link display="block" variant="body1" href={props.href} key={props.title} target="_blank" rel="noopener noreferrer">
-              <Grid container spacing={1} alignItems="stretch">
-                <Grid item>
-                  <decorableLink.icon />
-                </Grid>
-                <Grid item>{props.children[0]}</Grid>
+            <Grid container spacing={1} key={props.title} alignItems="stretch">
+              <Grid item>
+                <decorableLink.icon />
               </Grid>
-            </Link>
+              <Grid item>
+                <Link display="block" variant="body1" href={props.href} target="_blank" rel="noopener noreferrer">
+                  {props.children[0]}
+                </Link>
+              </Grid>
+            </Grid>
           );
         }
         return <Link target="_blank" rel="noopener noreferrer" {...props} />;

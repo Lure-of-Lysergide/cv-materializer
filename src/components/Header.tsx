@@ -2,10 +2,10 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
+import Hidden from '@material-ui/core/Hidden';
+import Link from '@material-ui/core/Link';
 import CreateIcon from '@material-ui/icons/Create';
 import GetAppIcon from '@material-ui/icons/GetApp';
-import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
 
 interface Section {
   title: string;
@@ -20,9 +20,8 @@ export interface HeaderProps {
 const useStyles = makeStyles((theme) => ({
   toolbar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
-  },
-  toolbarTitle: {
-    flex: 1,
+    justifyContent: 'space-between',
+    padding: theme.spacing(1, 0),
   },
   toolbarSecondary: {
     justifyContent: 'space-between',
@@ -52,16 +51,11 @@ const Header: React.FC<HeaderProps> = (props) => {
         >
           Write me
         </Button>
-        <Typography
-          component="h2"
-          variant="h5"
-          color="inherit"
-          align="center"
-          noWrap
-          className={classes.toolbarTitle}
-        >
-          {title}
-        </Typography>
+        <Hidden xsDown>
+          <Link href={`${process.env.PUBLIC_URL}/`} variant="h5" color="inherit" noWrap>
+            {title}
+          </Link>
+        </Hidden>
         <Button
           variant="outlined"
           size="small"
@@ -77,16 +71,17 @@ const Header: React.FC<HeaderProps> = (props) => {
       </Toolbar>
       <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
         {sections.map((section: Section) => (
-          <Link
-            color="inherit"
-            noWrap
-            key={section.title}
-            variant="body2"
-            href={section.url}
-            className={classes.toolbarLink}
-          >
-            {section.title}
-          </Link>
+          <Hidden xsDown={section.url === '/experience'} key={section.title}>
+            <Link
+              color="inherit"
+              noWrap
+              variant="body2"
+              href={section.url}
+              className={classes.toolbarLink}
+            >
+              {section.title}
+            </Link>
+          </Hidden>
         ))}
       </Toolbar>
     </>

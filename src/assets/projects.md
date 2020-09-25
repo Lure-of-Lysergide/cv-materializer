@@ -8,7 +8,7 @@ JS library and CLI tools for sending Ethereum and Bitcoin transactions. Useful f
 
 ### **mlp-generator**
 
-JS project for generating, training and analyzing simple artificial neural networks. This project was archived in the Arctic Vault program.  
+Node.js project for generating, training, and analyzing simple artificial neural networks. This project was archived in the Arctic Vault program.  
 [scifier.dev/mlp-generator](https://scifier.dev/mlp-generator)  
 [github.com/scifier/mlp-generator](https://github.com/scifier/mlp-generator)
 
@@ -25,5 +25,5 @@ Go-ethereum 1.8.14 client with modified PoA protocol - the contract deployment i
 
 ### **ws-frame-decoder**
 
-Raw websocket frame decoder.  
+JS library for decoding raw WebSocket frames according to RFC6455 Framing Protocol.  
 [github.com/BidiPassCompany/ws-frame-decoder](https://github.com/BidiPassCompany/ws-frame-decoder)

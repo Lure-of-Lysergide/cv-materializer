@@ -5,7 +5,7 @@
 Doctoral School of Biological and Geonomical Sciences  
 Moldova State University, Chișinău, R.M.
 
-### **2013 - 2018: Licentiate in Engineering (Information technology)**
+### **2013 - 2018: Licentiate in Engineering (Information Technology)**
 
 Faculty of Physics and Engineering  
 Moldova State University, Chișinău, R.M.

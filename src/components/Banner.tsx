@@ -12,7 +12,7 @@ export interface BannerProps {
     description?: string;
     image?: string;
     imageText?: string;
-    imageTitle?: string;
+    linkTarget?: string;
     linkText?: string;
   };
 }
@@ -65,7 +65,7 @@ const Banner: React.FC<BannerProps> = (props) => {
             <Typography variant="h5" color="inherit" paragraph>
               {contents.description}
             </Typography>
-            <Link variant="subtitle1" color="textSecondary" href="/me">
+            <Link variant="subtitle1" color="textSecondary" href={contents.linkTarget}>
               {contents.linkText}
             </Link>
           </div>

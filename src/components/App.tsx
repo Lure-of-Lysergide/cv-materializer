@@ -5,7 +5,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 
-import { experience, education, projects, posts, contacts } from '../assets';
+import { me, experience, projects, contacts } from '../assets';
 import Header from './Header';
 import Banner from './Banner';
 import Section from './Section';
@@ -18,9 +18,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const sections = [
-  { title: 'About me', url: '/me', contents: [experience, education] },
+  { title: 'About me', url: '/me', contents: [me] },
   { title: 'My projects', url: '/projects', contents: [projects] },
-  { title: 'My blog', url: '/blog', contents: posts },
+  { title: 'My experience', url: '/experience', contents: [experience] },
   { title: 'My contacts', url: '/contacts', contents: [contacts] },
 ];
 
@@ -28,8 +28,9 @@ const bannerContents = {
   title: process.env.REACT_APP_WELCOME_MESSAGE,
   description: process.env.REACT_APP_DESCRIPTION,
   image: `${process.env.PUBLIC_URL}/logo.png`,
-  imgText: process.env.REACT_APP_NAME,
-  linkText: 'About me',
+  imageText: process.env.REACT_APP_NAME,
+  linkTarget: window.location.href.includes(sections[1].url) ? sections[0].url : sections[1].url,
+  linkText: window.location.href.includes(sections[1].url) ? sections[0].title : sections[1].title,
 };
 
 const App: React.FC = () => {
@@ -52,7 +53,7 @@ const App: React.FC = () => {
                     component={(): JSX.Element => <Section contents={s.contents} />}
                   />
                 ))}
-                <Redirect from="/" to={sections[1].url} />
+                <Redirect from="/" to={sections[0].url} />
               </Switch>
             </Grid>
           </main>
