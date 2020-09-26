@@ -17,6 +17,8 @@ jobs:
           npm install
           npm config set script-shell bash --global
       - name: Building static webpage
+        env:
+          REACT_APP_EXTRA: ${{ secrets.REACT_APP_EXTRA }}
         run: npm run build
       - name: Load environment variables
         run: source .env

@@ -21,9 +21,9 @@ A React.js/typescript resume builder that is using markdown files for generating
 ### **geth-contracts-disallowed**
 
 Go-ethereum 1.8.14 client with modified PoA protocol - the contract deployment is allowed for whitelist external accounts and contract accounts only.  
-[github.com/BidiPassCompany/geth-contracts-disallowed](https://github.com/BidiPassCompany/geth-contracts-disallowed)
+[github.com/uloxio/geth-contracts-disallowed](https://github.com/uloxio/geth-contracts-disallowed)
 
 ### **ws-frame-decoder**
 
 JS library for decoding raw WebSocket frames according to RFC6455 Framing Protocol.  
-[github.com/BidiPassCompany/ws-frame-decoder](https://github.com/BidiPassCompany/ws-frame-decoder)
+[github.com/uloxio/ws-frame-decoder](https://github.com/uloxio/ws-frame-decoder)

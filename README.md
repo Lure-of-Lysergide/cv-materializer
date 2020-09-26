@@ -28,6 +28,8 @@ The standard GitHub Pages deployment is pretty easy. Follow these steps to get a
 7. Push your changes to the `master` branch if you have worked with a local copy of your `cv-materializer` repository.
 8. Profit! (In a few minutes you can access your online portfolio on `https://<YOUR_GITHUB_USERNAME>.github.io` or your custom domain).
 
+Extra: Before triggering the deployment, you can add additional things, like `Google Analytics`, to the `<HEAD>` section, by defining a new repository secret `REACT_APP_EXTRA`.
+
 ### Development and Manual Deployment
 
 If you have [git](https://git-scm.com) and [Node.js 8.0+](https://nodejs.org/en/download) already installed, you can follow these steps to get a local copy for development, testing or manual deployment:
@@ -44,6 +46,13 @@ Before starting/building the project follow these steps:
 1. Edit the .env file.
 2. Edit the markdown files in `src/assets`.
 3. Change (or just remove) the `public/logo.png` image.
+
+Extra: You can add additional things, like `Google Analytics`, to the `<HEAD>` section, by creating a `.env.local` file with following contents:
+
+```html
+REACT_EDITOR=code
+REACT_APP_EXTRA=<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=Your_Tracking_ID"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'Your_Tracking_ID');</script>
+```
 
 ```bash
 # Start the development server
