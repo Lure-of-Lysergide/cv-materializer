@@ -60,7 +60,13 @@ const options = {
                 <decorableLink.icon />
               </Grid>
               <Grid item>
-                <Link display="block" variant="body1" href={props.href} target="_blank" rel="noopener noreferrer">
+                <Link
+                  display="block"
+                  variant="body1"
+                  href={props.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {props.children[0]}
                 </Link>
               </Grid>
