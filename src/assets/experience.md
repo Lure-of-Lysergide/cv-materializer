@@ -8,7 +8,7 @@ Chișinău, R.M.
 - Developed a **Node.js** tool for deployment **private Ethereum blockchain** networks on **AWS** using **Terraform** and **Docker**
 - Performed **load testing** of a private blockchain infrastructure with instant transactions using **K6**
 - Developed a **custom Ethereum consensus protocol** in **Golang**
-- Improved and developed new features for a **cross-client chat bot** (**Whatsapp**, **Telegram**) using **Node.js** and **Python 3**
+- Improved and developed new features for a **cross-client chatbot** (**Whatsapp**, **Telegram**) using **Node.js** and **Python 3**
 - Developed, tested, deployed and integrated **smart contracts** with **Solidity**, **Truffle** and **Web3**
 - Performed **smart contract audit**
 - Developed **multi-blockchain wallet** solutions (**Ethereum**, **Bitcoin**)
